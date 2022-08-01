@@ -1,0 +1,32 @@
+Exame 1
+Zerei por não ter logado nos 10 minutos iniciais.
+
+Exame 2
+Questão 1
+Fazer um Hello World com a função "write"
+ok, consegui fazer.
+
+Questão 2:
+Escreva uma função que troque o conteudo de 2 inteiros cujos endereços sao passados como
+parâmetros.
+Ela deverá ser prototipada da seguinte forma:
+void ft_swap(int *a, int *b)
+Essa eu não consegui fazer
+
+Exame 3 
+Questão 1
+Escreva um programa que tenha como parâmetro uma cadeia de caracteres e que exiba
+na saída padrão o 1º caracter 'a' encontrado nessa cadeia, seguido de \n. Se nenhum 
+'a' for encontrado na cadeia, o programa deve exibir 'a' seguido de '\n'.
+
+Se o nº de parâmetros for diferente de 1, o programa deve exibir 'a' seguido de n.
+
+Ex
+./aff.a "abc" | cat -e
+
+Resumindo
+Esse raio de programa tinha só que fazer um write p responder 'a' de qualquer jeito e eu 
+não saquei isso.
+
+Exame 4 (final)
+Consegui fazer 3 questões e parei na quarta

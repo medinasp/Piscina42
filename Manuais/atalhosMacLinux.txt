@@ -1,0 +1,20 @@
+Ctrl + C			-	interrompe loop infinito-as x tem que digitar 2x
+Command + espaço	-	busca app
+Command + enter		-	finder
+Command + ,			-	preferencias
+Command + n			-	abrir
+Command + q			-	fechar
+Command + +			-	aumenta fonte
+Ctrl + seta p cima	-	organizar
+bolinha verde + alt	-	maximiza mas não fica fullwidth
+bol verde (segura)	-	arrasta as telas
+Command seta lado	-	alterna dentro do workspace
+
+Copiar e colar só dentro do próprio terminal:
+Ctrl + w => copiar primeira palavra antes do cursor
+Ctrl + k => copiar tudo depois do cursor
+Ctrl + u => copiar tudo antes do cursor
+Ctrl + y => colar o que copiou c os comandos acima
+
+
+

@@ -1,0 +1,20 @@
+$				-	vai p fim da linha
+o				-	cria uma linha embaixo
+dd				-	deleta linha (Recorta)
+u				-	Ctrl + z
+numero + dd		-	apaga numero de linhas especificado
+numero linha	-	pula direto p linha antes de entrar no modo de edicao
+A				-	entra em modo de edicao no fim da linha
+g				-	volta p começo se tiver no final (acho)
+G				-	vai direto p fim do arquivo
+yy				-	copia a linha
+num linhas	+ yy-	copia numero linhas especificado a partir da marcada
+p				-	cola as linhas copiadas
+:w		-	salva
+:q!		-	sai sem salvar
+:wq		-	sai salvando
+
+syntax on => highlight
+set nu	=> numera as linhas
+
+Comandos acima da p digitar no arquivo aberto, ou colocar como padrão em um arquivo de configuração que eu esqueci o nome

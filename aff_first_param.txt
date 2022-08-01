@@ -1,0 +1,69 @@
+Assignment name  : aff_first_param
+Expected files   : aff_first_param.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Escreva um programa que tenha como parâmetro cadeias de caracteres e que
+exiba seu primeiro parâmetro seguido de um '\n'.
+
+Se o número de parâmetros for inferior a 1, o programa deve exibir '\n'.
+
+Exemplo:
+
+$> ./aff_first_param vincent pôs "o asno" no campo mas "ele" voltou | cat -e
+vincent$
+$> ./aff_first_param "eu amo queijo de cabra" | cat -e
+eu amo queijo de cabra$
+$> ./aff_first_param | cat -e
+$
+
+examples:
+$> ./aff_first_param vincent mit "l'ane" dans un pre et "s'en" vint | cat -e
+vincent$
+$> ./aff_first_param "j'aime le fromage de chevre" | cat -e
+j'aime le fromage de chevre$
+$> ./aff_first_param | cat -e
+$
+
+Solução:
+#include <unistd.h>
+
+int		ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (0);
+}
+
+int		ft_putstr(char *str)
+{
+	int cont;
+	cont = 0;
+
+	while(str[cont] != '\0')
+	{
+		ft_putchar(str[cont]);
+		str++;
+	}
+	return (0);
+}
+
+int		aff_first_param(char *str)
+{
+	ft_putstr(str);
+	return (0);
+}
+
+int		main(int argc, char *argv[])
+{
+	while (argc < 2)
+	{
+		ft_putchar('\n');
+		return (0);
+	}
+	if (argc <= 100)
+	{
+		aff_first_param(argv[1]);
+		ft_putchar('\n');
+	}
+	return (0);
+}

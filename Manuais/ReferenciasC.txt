@@ -1,0 +1,43 @@
+Rodar e debugar códigos em C, C++, Java, Javscript e Python:
+https://pythontutor.com
+
+
+printf:
+%i => int
+%d => int
+%f => float
+%c => char
+%p => posição memória
+%s => string
+\n => pula uma linha
+
+unsigned => int sem sinal
+Como não tem os negativos, então cabe o dobro de valores negativos neste int 2147483648 * 2
+
+Compilar:
+gcc -Wall -Wextra -Werror arquivoscompilados (da p colocar vários arquivos de várias pastas diferentes usando "*"
+vai sair um arquivo a.out
+
+Se quiser escolher o nome de saida:
+gcc -Wall -Wextra -Werror -o nomedesaida.extensao arquivoscompulados
+
+<!> para rodar comandos no Shell
+
+Write:
+write(1, "texto", 1)	=>	o segundo 1 é o numero de caracteres que vc quer que apareça, se deixar 1, vai aparecer só o "t" nesse caso.
+colocar uma variável no write:
+
+x = '1';
+write(1, &1, 1"
+
+transformar uma variável em caracter asc para ser lido pelo write:
+x = 1 + 1;
+Se vc quiser que o write leia que é 2, tem que colocar:
+x = (1 + 1) + '0';
+write (1, &x ,1) => vai imprimir 2.
+ver C00 exercicio 5 ou 6 da 42...
+
+Adicionar mais um texto no write
+Write(1, &a["bcdef"], 1) => colocar entre [] => não testei p ver se funciona e como.
+
+

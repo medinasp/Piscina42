@@ -1,0 +1,79 @@
+Exercício 1
+    Criar uma variável de ambiente digitando o seguinte no prompt:
+        FT_USER=enemedin
+    Depois fazer a consulta assim:
+        id -Gn $FT_USER | tr ' ' ',' | tr -d '\n'
+    Este comando busca os "grupos" onde o login que está contido dentro da variável FT_USER(enemedin) estão, e apresenta sem espaço e com vírgula
+
+id -Gn $FT_USER - busca os dados da variável $FT_USER
+| - inicia novos parametros
+tr - traduz (substitui) espaço por ,
+tr -d '\n' - remove quebra de linha.
+Algumas pessoas usou o comando "Group", eu usei este que está escrito no manual que é a forma atualizada.
+
+Exercício 2
+iEscreva uma linha de comando que procure na pasta atual e em todas as subpastas
+todos os arquivos cujos nomes terminam com ".sh"(sem as aspas) e que só exiba os
+seus nomes, sem o .sh.
+
+find . -type f -name '*.sh' -exec basename {} .sh \;
+
+-type f		=>	tipo arquivo
+-exec		=>	sinaliza que vai começar a executar outro comando
+Basename	=>	baseado no nome do arquivo
+{}		=>	Regex
+.sh		=>	vai printar só o nome, sem extensão .sh
+\;		=>	fim do comando
+
+    
+Exercício 3
+Escreva uma linha de comando que mostre o número de arquivos regulares e de
+pastas dentro da pasta atual e todas as suas subpastas, incluindo o "."da pasta
+inicial.
+
+Find . | wc -l
+Buscar no diretório e nos subs
+Wc - conta as linhas do resultado que vc pediu, como vc pediu todos arquivos, 1 por linha, vai contar o total de arquivos. 
+-l - indica que vai contar as linhas
+
+
+Exercicio 4
+ifconfig -a | grep ether | sed 's/ether //g' | tr -d '\t' | tr -d ' ' | cat -e
+
+Ifconfig -a	=>	traz tudo
+grep		=>	recorta uma parte do resultado
+sed		=>	editor stream - remove a palavra 'ether'
+tr		=>	translate character
+		-d	=>	deleta string1	
+		'\t'	=>	deleta tab
+		' '	=>	deleta espaço depois
+cat -e		=>	mostra quebra de linha
+
+Exercicio 5
+Crie um arquivo contendo somente "42"e NADA mais
+Ele deve ser nomeado:
+"\?$*’MaRViN’*$?\"
+
+Este arquivo tem varios caracteres reservados entao pra criar em linha de comando é assim:
+
+usei o cat e coloquei o nome entre aspas simples ''
+cat > '"\?$*'MaRViN'*$?\"'
+
+Aí ele gera o arquivo com o nome certo, mas ficam faltando as aspas ao redor de MarVin, assim a gente resolve renomeando o arquivo e escapando estas aspas simples com uma barra invertida anterior:
+
+Se vc der um mv(tab), ele já vai trazer o nome do arquivo cheio dos escapes(\) antes de cada caracter reservado, basta dar outro (tab) e incluir mais um escape(\) antes das aspas que ficaram faltando
+
+Exercicio 6
+Escreva uma linha de comando que exiba um ls -l uma linha a cada duas (linha
+sim, linha não), a partir da primeira.
+Arquivos para entregar : skip.sh
+
+ls -l | sed -n 'p;n'
+
+ls -l => traz conteudo da pasta com detalhes
+| => indica início de novo comando
+sed -n => remove tudo
+'p;n' => p (printa o que foi selecionado, sem nada ele printa tudo)
+         n (pula uma linha)
+
+

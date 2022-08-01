@@ -1,0 +1,52 @@
+compactar arquivos
+tar -cf arquivo.tar
+
+descompactar sem zuar o arquivo
+tar -xpvf arquivo.tar
+
+ver o conteúdo do tar sem descompactar
+tar -tvf
+
+cat > arquivo
+cria o arquivo e já escreve nele
+
+cat -e arquivo
+ve o conteudo do arquivo com as quebras de linha sem precisar abri-lo
+
+touch -t => data/hora arquivo
+touch -mht datahora arquivo altera data e cria link simbólico
+ln -l => cria arquivo com base em outro arquivo
+ln -s => arquivo/diretorio destino(nome do link\ => criar link simbólico.
+
+ver conteudo da pasta e dos subdiretorios
+ls */*
+
+para sair de vários comandos que as vezes não dá, muitos jeitos:
+Ctrl + c
+Ctrl + d
+Ctrl + d 2 vezes
+só "d"
+
+Ctrl + W : recorta a palavra antes do cursor e adiciona-a ao buffer da área de transferência.
+Ctrl + K : corta a parte da linha após o cursor e adiciona-a ao buffer da área de transferência. Se o cursor estiver no início da linha, ele cortará e copiará a linha inteira.
+Ctrl + U : recorta a parte da linha antes do cursor e adiciona-a ao buffer da área de transferência. Se o cursor estiver no final da linha, ele cortará e copiará a linha inteira.
+Ctrl + Y : cola o último texto que foi recortado e copiado.
+
+Copiar e Colar o no Linux
+Ctrl + Shift + C/V
+Se tiver no WSL tem que clicar c botão direito na barra e chamar propriedades
+Aí escolhe Opções e marca a opção Ctrl + Shift + C/V para copiar / colar
+
+Converter pdf para texto para ler no terminal:
+https://pdf.wondershare.com.br/pdf-knowledge/pdf-to-text-linux.html
+Instalar:
+sudo apt install poppler-utils
+
+Depois converter:
+pdftotext -layout source.pdf target.txt
+
+Para converter somente um conjunto de páginas dentro do documento, altere a sintaxe para combinar c
+pdftotext -layout -f M -l N source.pdf target.txt [onde M é a primeira página e N é a última página a ser convertida.
+
+
+

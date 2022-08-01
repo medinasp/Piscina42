@@ -1,0 +1,275 @@
+Exercicio 0
+Escreva uma função que mostre o caractere passado como parâmetro
+
+#include<unistd.h>
+
+    void	ft_putchar(char c)
+    {
+        write(1, &c, 1);
+    }
+
+
+
+Exercício 1
+Escreva uma função que mostre o alfabeto em minúsculo em apenas uma linha, em
+ordem crescente, começando pela letra ’a’.
+
+Busca a posição de "a" na tabela Asc, imprime e incrementa o contador até chegar a posição de 
+"z", imprimindo o alfabeto.
+
+void	ft_print_alphabet(void)
+{
+	int	i;
+
+	i = 'a';
+	while (i <= 'z')
+	{
+		write(1, &i, 1);
+		i++;
+	}
+}
+
+
+
+Exercício 2
+Escreva uma função que mostre o alfabeto em minúsculo em apenas uma linha, em
+ordem decrescente, começando pela letra ’z’.
+
+Busca a posição de "z" na tabela Asc, imprime e decrementa o contador até chegar a posição de 
+"a", imprimindo o alfabeto em ordem invertida.
+
+#include<unistd.h>
+void	ft_print_reverse_alphabet(void)
+{
+	int	i;
+
+	i = 'z' ;
+	while (i >= 'a')
+	{
+		write(1, &i, 1);
+		i--;
+	}
+}
+
+
+
+Exercício 3
+Escreva uma função que mostre todos os números em uma única linha em ordem
+crescente.
+
+Busca a posicao de "0" na tabela Asc e imprime, repete o laço até chegar a "9".
+
+#include<unistd.h>
+void	ft_print_numbers(void)
+{
+	int	i;
+
+	i = '0';
+	while (i <= '9')
+	{
+		write(1, &i, 1);
+		i++;
+	}
+}
+
+
+
+Exercício 4
+Escreva uma função que mostre ’N’ ou ’P’ segundo o sinal do inteiro passado como
+parâmetro. Se n for negativo, indique ’N’. Se n for positivo ou nulo, indique ’P’.
+
+Lê n, verifica se é maior = ou menor que 0, imprime P em caso de positivo(maior = 0), 
+ou N em caso de negativo
+
+#include<unistd.h>
+    
+    void	ft_is_negative(int n)
+    {
+        if (n < 0)
+        {
+            write(1, "N", 1);
+        }
+        else
+        {
+            write(1, "P", 1);
+        }
+    }
+    
+    void	ft_is_negative(int n);
+
+
+
+Exercício 5
+Escreva uma função que mostre, em ordem crescente, todas as diferentes combinações de três 
+números diferentes em ordem crescente - sim, a repetição é proposital
+
+#include<unistd.h>
+    void	ft_putchar_5(char c);
+    void	ft_print_result(int x, int y, int z);
+    
+    void	ft_print_comb(void)
+    {
+        int	a;
+        int	b;
+        int	c;
+    
+        //inicia a com 0, b com 1, e c com 2 para se ter a combinação de 3 números pedidas no Exercício
+        //imprime (ft_print_result) com este primeiro resultado "012" e uma vírgula depois.
+        //incrementa c imprimindo com os mesmos "a" e "b" até chegar a 9.
+        //incrementa b imprindo com o mesmo "a" e novos "c" até chegar a b = 8.
+        //incrementa a imprimindo com novos "a" e "b" até chegar a 7.
+
+        a = 0;
+        while (a <= 7)
+        {
+            b = a + 1;
+            while (b <= 8)
+            {
+                c = b + 1;
+                while (c <= 9)
+                {
+                    ft_print_result(a, b, c);
+                    c++;
+                }
+                b++;
+            }
+            a++;
+        }
+    }
+    
+    void	ft_print_result(int x, int y, int z)
+    {
+        ft_putchar_5(x + '0');
+        ft_putchar_5(y + '0');
+        ft_putchar_5(z + '0');
+          
+        if (x < 7)
+        {
+            write(1, ", ", 2);
+    }
+    }
+    
+    void	ft_putchar_5(char c)
+    {
+        write(1, &c, 1);
+    }
+
+
+
+Exercício 6
+Escreva uma função que mostre todas as diferentes combinações de dois números
+entre 0 e 99, em ordem crescente.
+
+#include<unistd.h>
+    void	ft_print_comb2(void)
+    {
+        char	c;
+        int		x;
+        int		y;
+    
+        //x é a variável que representa o primeiro número e y o segundo
+        //enquanto x for menor que 99 e y menor que 98, eles são divididos por 10 para isolar e imprimir
+        //o primeiro número e depois pegamos o resto da divisão por 10 e imprimimos o segundo número.
+        //damos um espaço, repetimos as mesmas operações para o y e imprimimos uma vírgula seguida de um
+        //espaço antes de entrar novamente no laço pra chegar ao próximo número.
+
+        x = 0;
+        while (x <= 98)
+        {
+            y = x + 1;
+            while (y <= 98)
+            {
+                c = ((x / 10) + '0');
+                write(1, &c, 1);
+                c = ((x % 10) + '0');
+                write(1, &c, 1);
+                write(1, " ", 1);
+                c = ((y / 10) + '0');
+                write(1, &c, 1);
+                c = ((y % 10) + '0');
+                write(1, &c, 1);
+                write(1, ", ", 2);
+                y++;
+            }
+            x++;
+        }
+        write(1, "98 99", 5);
+    }
+
+
+    
+Exercicio 7
+Escreva uma função que mostre um número passado como parâmetro. A função
+deverá ser capaz de representar a totalidade dos valores possíveis em uma variável
+do tipo int.
+Arquivos para entregar : ft_putnbr.c
+Funções autorizadas : write
+
+#include <unistd.h>
+void    ft_putnbr(int nb)
+{
+    //inicia as variáveis
+    int contador;
+    int nBase;
+    int pAsc;
+
+    //caso o número seja negativo, printa "-" e remove o sinal multiplicando por "-1"
+    if (nb < 0)
+    {
+        write(1, "-", 1);
+        nb = (-1) * nb;
+    }
+
+    //inicia o contador atribuindo o valor 1
+    //atualiza o nBase com o nb que é o número sem o sinal
+    contador = 1;
+    nBase = nb;
+   
+    //Vai dividindo o nBase (valor do parametro de entrada sem o sinal negativo), 
+    //até chegar a um número menor que 10 para chegar ao primeiro algarismo do número.
+
+    //Enquanto o nBase for maior que 10, o contador é multiplicado por 10 pra saber quantas vezes foi 
+    //necessário dividir pra chegar ao primeiro algarismo e depois multiplicar novamente para ter acesso
+    //ao segundo algarismo em diante até o último.
+
+    while (nBase >= 10)
+    {
+        contador = contador * 10;
+        nBase = nBase / 10;
+    }
+
+    //Enquanto o contador for >= 1 a rotina vai rodar, e este contador vai sendo dividido por 10
+    //quantas vezes ele foi multiplicado na rotina anterior para voltar ao número completo até o
+    //último algarismo.
+
+    //pAsc => divide o nb(número passado no parâmetro inicial) pelo contador para ter acesso ao 
+    //primeiro algarismo
+
+    //nb => pega o resto da divisão do (nb / contador), que será exatamente os algarismos seguintes
+    //que foram isolados do primeiro
+
+    //pAsc => na tabela Asc, os números começam na posição 48, então somando com o algarismo que foi 
+    //isolados dos restantes, vai chegar a posição deste número isolado na tabela Asc.
+
+    //write => printa a posição deste número que é o primeiro número do algarismo isolado.
+    
+    //divide o contador por 10 e começa de novo com o nb atualizado, isolando o segundo número fornecido
+    // no parâmetro de entrada e assim até o último número
+
+    while (contador >= 1)
+    {
+        pAsc = (nb / contador);
+        nb = nb % contador;
+        pAsc = pAsc + 48;
+        write(1, &pAsc, 1);
+        contador = contador / 10;
+    }
+}
+
+int main(void)
+{
+    //ft_putnbr(-2147483647);
+
+    ft_putnbr(-214);
+    return (0);
+}
